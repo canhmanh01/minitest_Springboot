@@ -9,28 +9,36 @@ import javax.persistence.Entity;
 import com.fis.spring.entity.Account;
 import com.fis.spring.entity.Transaction;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-@Entity
-public class AccountDto extends Transaction {
+@AllArgsConstructor
+@NoArgsConstructor
+public class AccountDto extends Transaction  {
 	
 	
 	
-	public AccountDto(Long id, Date transactionDate, Account fronmAccount, Account toAccount, Double amount,
+	private Long fromAccountId;
+	private Long toAccountId;
+	private Double amount;
+	private String content;
+	
+
+	public AccountDto(Long id, Date transactionDate, Account fronmAccount, Long toAccount, Double amount,
 			Integer status, String content, String errorReason) {
 		super(id, transactionDate, fronmAccount, toAccount, amount, status, content, errorReason);
 		// TODO Auto-generated constructor stub
 	}
-
-	private String accountNumber;
-	private String accountName;
-	private Double balance;
-	private int status;
-	private Account fronmAccount;
-	private Account toAccount;
-	
-	List<Transaction> listtran = new ArrayList<>();
+	public Account getFromAccountId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public Account getToAccountId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 
 }

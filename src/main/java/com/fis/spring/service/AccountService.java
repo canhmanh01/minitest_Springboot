@@ -1,5 +1,7 @@
 package com.fis.spring.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import com.fis.spring.entity.Account;
@@ -8,7 +10,8 @@ import com.fis.spring.entity.Account;
 public interface AccountService {
 	Account save(Account account);
     Account update(Account account);
-    void deleteById(Long accountId);
+    String deleteById(Long accountId);
     Account getById(Long accountId);
+    List<Account> findAllAccounts();
 
 }

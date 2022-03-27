@@ -29,13 +29,13 @@ public class Transaction {
 	private Account fronmAccount;
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "toAccount", referencedColumnName = "id")
-	private Account toAccount;
+	private Long toAccount;
 	private Double amount;
 	private Integer status;
 	private String content;
 	private String errorReason;
 	
-	public Transaction(Long id, Date transactionDate, Account fronmAccount, Account toAccount, Double amount,
+	public Transaction(Long id, Date transactionDate, Account fronmAccount, Long toAccount, Double amount,
 			Integer status, String content, String errorReason) {
 		super();
 		this.id = id;
@@ -72,11 +72,11 @@ public class Transaction {
 		this.fronmAccount = fronmAccount;
 	}
 
-	public Account getToAccount() {
+	public Long getToAccount() {
 		return toAccount;
 	}
 
-	public void setToAccount(Account toAccount) {
+	public void setToAccount(Long toAccount) {
 		this.toAccount = toAccount;
 	}
 
